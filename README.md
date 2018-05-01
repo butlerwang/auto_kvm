@@ -32,8 +32,8 @@ virt-clone -o centos7_temp -n centos7-2 --auto-clone
 virt-sysprep --hostname centos7-5  --firstboot-command 'sed -i "s#192.168.122.100#192.168.122.105#g" /etc/sysconfig/network-scripts/ifcfg-eth0' -d centos7-5
 ```
 
-```
 ## create/revert/delete snapshot
+```
 virsh snapshot-create-as --domain centos7-4 --name centos7-4-snap-1 --description "first booted 5/2/2018"
 virsh snapshot-list centos7-1
 virsh snapshot-revert centos7-1 centos7-1-snap-1
